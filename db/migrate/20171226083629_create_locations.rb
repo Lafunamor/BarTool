@@ -4,7 +4,6 @@ class CreateLocations < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :description
 
-
       t.timestamps
     end
   end

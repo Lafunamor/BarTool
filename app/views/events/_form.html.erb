@@ -13,10 +13,10 @@
 
   <%= bootstrap_form_for(@event) do |f| %>
     <%= f.text_field :name %>
-    <%= f.date_field :date %>
+    <%= f.date_select :date %>
     <%= f.text_area :description %>
-    <%= f.text_field :location %>
-    <%= f.submit "Create event" %>
+    <%= f.select :location, Location.all.collect {|l| [l.name, l.id] } %>
+    <%= f.submit "Event erstellen" %>
   <% end %>
 
 

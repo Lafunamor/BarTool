@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171226143820) do
+ActiveRecord::Schema.define(version: 20180211153653) do
+
+  create_table "Events_Locations", id: false, force: :cascade do |t|
+    t.integer "Event_id", null: false
+    t.integer "Location_id", null: false
+  end
+
+  create_table "Events_ShiftLocations", id: false, force: :cascade do |t|
+    t.integer "Event_id", null: false
+    t.integer "ShiftLocation_id", null: false
+  end
+
+  create_table "Locations_ShiftLocations", id: false, force: :cascade do |t|
+    t.integer "Location_id", null: false
+    t.integer "ShiftLocation_id", null: false
+  end
+
+  create_table "ShiftLocations_Shifts", id: false, force: :cascade do |t|
+    t.integer "ShiftLocation_id", null: false
+    t.integer "Shift_id", null: false
+  end
+
+  create_table "Shifts_Users", id: false, force: :cascade do |t|
+    t.integer "Shift_id", null: false
+    t.integer "User_id", null: false
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -70,8 +95,10 @@ ActiveRecord::Schema.define(version: 20171226143820) do
   create_table "shifts", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
+    t.integer "shift_location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["shift_location_id"], name: "index_shifts_on_shift_location_id"
   end
 
   create_table "users", force: :cascade do |t|

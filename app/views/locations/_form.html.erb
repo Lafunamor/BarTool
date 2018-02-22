@@ -11,7 +11,9 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= bootstrap_form_for(@location) do |f| %>
+    <%= f.text_field :name, label: "Name" %>
+    <%= f.text_area :description, label: "Beschreibung" %>
+    <%= f.submit "Ort erstellen" %>
+    <% end %>
 <% end %>

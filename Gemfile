@@ -7,8 +7,10 @@ end
 
 gem 'devise'
 gem 'activeadmin'
-gem "bootstrap"
+gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
 gem 'bootstrap_form'
+gem 'glyphicons-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
@@ -49,6 +51,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'better_errors'
+  gem 'rails_layout'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

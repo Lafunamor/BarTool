@@ -4,7 +4,7 @@
 <tr> <td>Name:</td> <td><%= @event.name %></td></tr>
   <tr> <td>Date:</td> <td><%= I18n.localize @event.date %></td></tr>
   <tr><td>Description:</td><td><%= @event.description %></td></tr>
-  <tr> <td>Location:</td> <td><%= @event.location %></td></tr>
+  <tr> <td>Location:</td> <td><%= Location.find(@event.location).name %></td></tr>
 </table>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

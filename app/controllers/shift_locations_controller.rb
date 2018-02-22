@@ -1,4 +1,5 @@
 class ShiftLocationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_shift_location, only: [:show, :edit, :update, :destroy]
 
   # GET /shift_locations
