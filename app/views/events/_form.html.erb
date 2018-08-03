@@ -16,7 +16,7 @@
     <%= f.date_select :date %>
     <%= f.text_area :description %>
     <%= f.select :location, Location.all.collect {|l| [l.name, l.id] } %>
-    <%= f.submit "Event erstellen" %>
+    <%= f.submit %>
   <% end %>
 
 

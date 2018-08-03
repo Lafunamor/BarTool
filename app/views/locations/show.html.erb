@@ -1,6 +1,24 @@
 <p id="notice"><%= notice %></p>
-<b>Name:</b> <%= @location.name %></br>
-<b>Beschreibung:</b><br>
-<%= @location.description %><br>
+<div>
+  <b>Name:</b> <%= @location.name %></br>
+  <b>Beschreibung:</b><br>
+  <%= @location.description %><br>
+</div>
+<br>
+<div>
+  <h3>Schicht Orte:</h3>
+  <table>
+    <tr>
+      <th>Name:</th>
+    </tr>
+    <% @location.shift_locations.each do |shift_location| %>
+      <tr>
+        <td><%= shift_location.name %></td>
+      </tr>
+
+    <% end %>
+  </table>
+  <% link_to 'Schicht Ort hinzufügen' %>
+</div>
 <%= link_to 'Bearbeiten', edit_location_path(@location) %> |
 <%= link_to 'Zurück', locations_path %>
